@@ -6,17 +6,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        centerTitle: true,
-        title: Text('Quiz App'.toUpperCase()),
-        actions: [
-          Icon(
-            Icons.favorite_border,
-            color: Colors.white,
-          ),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://static.vecteezy.com/system/resources/previews/001/576/510/non_2x/abstract-flat-solid-color-bakcground-free-vector.jpg'))),
+        ),
       ),
     );
   }
