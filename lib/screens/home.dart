@@ -10,9 +10,11 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                      'https://static.vecteezy.com/system/resources/previews/001/576/510/non_2x/abstract-flat-solid-color-bakcground-free-vector.jpg'))),
+            image: DecorationImage(
+              image: AssetImage('assets/images/background.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
       ),
     );
