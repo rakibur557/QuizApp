@@ -1,6 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testme/screens/home.dart';
+import 'package:testme/screens/landingpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,10 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: AnimatedSplashScreen(
+        splash: Image.asset('assets/images/logo.png'),
+        nextScreen: LandingPage(),
+        splashIconSize: 50.0,
+      ),
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.path,
+      initialRoute: LandingPage.path,
       routes: {
-        HomeScreen.path: (ctx) => HomeScreen(),
+        LandingPage.path: (ctx) => LandingPage(),
       },
     );
   }

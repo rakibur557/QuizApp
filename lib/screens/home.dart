@@ -5,10 +5,14 @@ class HomeScreen extends StatelessWidget {
   //const HomeScreen({Key? key}) : super(key: key);
   final List<String> iteams = [
     'Dart Basic',
-    'Dart Advanced'
-        'Flutter Basic',
+    'Dart Advanced',
+    'Flutter Basic',
     'Fluter UI',
     'Flutter with Firebase',
+    'Flutter Advanced',
+    'Error Handling',
+    'Interview Questions',
+    'Written Questions',
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,10 +41,10 @@ class HomeScreen extends StatelessWidget {
                   top: 20,
                 ),
                 child: Card(
-                  color: Colors.orange,
+                  color: Colors.orange[400],
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
+                        horizontal: 12, vertical: 20),
                     child: Column(
                       children: [
                         Text(
@@ -76,6 +80,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: ListView.builder(
                   itemCount: iteams.length,
@@ -85,12 +92,21 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.blue,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            '${iteams[index]}',
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '${iteams[index]}',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                ),
+                              ),
+                              Icon(Icons.play_arrow, color: Colors.white),
+                            ],
                           ),
                         ),
                       ),
-                      trailing: Icon(Icons.play_arrow),
                     );
                   },
                 ),
