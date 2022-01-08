@@ -13,15 +13,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: AnimatedSplashScreen(
-        splash: Image.asset('assets/images/logo.png'),
+        splash: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset('assets/images/logo.png'),
+            CircularProgressIndicator(),
+            Text('Developed by Rakib'),
+          ],
+        ),
         nextScreen: LandingPage(),
-        splashIconSize: 50.0,
+        splashIconSize: 1000.0,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: LandingPage.path,
-      routes: {
-        LandingPage.path: (ctx) => LandingPage(),
-      },
+      // routes: {
+      //   LandingPage.path: (ctx) => LandingPage(),
+      // },
     );
   }
 }

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:testme/screens/home.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   static String path = 'LandingPage';
-  const LandingPage({Key? key}) : super(key: key);
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  final nameInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +43,19 @@ class LandingPage extends StatelessWidget {
                   fontSize: 20,
                 ),
                 cursorHeight: 20.0,
+                controller: nameInput,
               ),
             ),
             SizedBox(
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                showAlertDialog(context);
+                // if (nameInput == null) {
+                //   showAlertDialog(context);
+                // } else {}
+              },
               child: Text(
                 'Save',
                 style: TextStyle(fontSize: 20),
@@ -55,10 +68,40 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
             ),
-            CircularProgressIndicator(),
           ],
         ),
       ),
     );
   }
 }
+
+showAlertDialog(BuildContext context) {
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Don't you have name?"),
+    content: Text(
+        "This is required to play the game. Please enter your legal name then click save."),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+
+hello
