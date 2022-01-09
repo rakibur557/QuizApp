@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   static String path = "HomeSceen";
   //const HomeScreen({Key? key}) : super(key: key);
+  String name;
+  HomeScreen(this.name);
   final List<String> iteams = [
     'Dart Basic',
     'Dart Advanced',
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          'Your Name Here',
+                          '$name',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
@@ -118,14 +120,11 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-// class CustomListTile extends StatelessWidget {
-//   const CustomListTile({ Key? key }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: ,
-//     );
-//   }
-// }
+/*
+Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (Context) =>
+                          MyLoginPage(_userName.text, _password.text),
+                    ),
+                  );
+*/

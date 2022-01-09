@@ -51,10 +51,16 @@ class _LandingPageState extends State<LandingPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                showAlertDialog(context);
-                // if (nameInput == null) {
-                //   showAlertDialog(context);
-                // } else {}
+                //showAlertDialog(context);
+                if (nameInput.text.isEmpty) {
+                  showAlertDialog(context);
+                } else {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (Context) => HomeScreen(nameInput.text),
+                    ),
+                  );
+                }
               },
               child: Text(
                 'Save',

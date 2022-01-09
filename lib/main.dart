@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
         splashIconSize: 1000.0,
       ),
       debugShowCheckedModeBanner: false,
-      // routes: {
-      //   LandingPage.path: (ctx) => LandingPage(),
-      // },
+      routes: {
+        HomeScreen.path: (ctx) => HomeScreen(''),
+      },
     );
   }
 }
