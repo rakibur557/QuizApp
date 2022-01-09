@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testme/screens/details.dart';
 
 class HomeScreen extends StatelessWidget {
   static String path = "HomeSceen";
@@ -90,6 +91,13 @@ class HomeScreen extends StatelessWidget {
                   itemCount: iteams.length,
                   itemBuilder: (context, int index) {
                     return ListTile(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Details(),
+                          ),
+                        );
+                      },
                       title: Card(
                         color: Colors.blue,
                         child: Padding(
