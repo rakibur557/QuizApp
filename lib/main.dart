@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testme/screens/details.dart';
 import 'package:testme/screens/home.dart';
 import 'package:testme/screens/landingpage.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.path: (ctx) => HomeScreen(''),
+        Details.path: (ctx) => Details(),
       },
     );
   }
